@@ -456,7 +456,7 @@
           <div class="row2">
             <div class="field">
               <label for="h_fat">Faturamento mensal</label>
-              <select id="h_fat" name="faturamento">
+              <select id="h_fat" name="faturamento" required>
                 <option value="">Selecione</option>
                 <option>Até R$ 50 mil</option>
                 <option>R$ 50 mil a R$ 200 mil</option>
@@ -467,7 +467,7 @@
             </div>
             <div class="field">
               <label for="h_setor">Setor de atuação</label>
-              <select id="h_setor" name="setor">
+              <select id="h_setor" name="setor" required>
                 <option value="">Selecione</option>
                 <option>Saúde / Clínicas</option>
                 <option>Serviços / B2B</option>
@@ -900,7 +900,7 @@
       <div class="row2">
         <div class="field">
           <label for="m_fat">Faturamento mensal</label>
-          <select id="m_fat" name="faturamento">
+          <select id="m_fat" name="faturamento" required>
             <option value="">Selecione</option>
             <option>Até R$ 50 mil</option>
             <option>R$ 50 mil a R$ 200 mil</option>
@@ -911,7 +911,7 @@
         </div>
         <div class="field">
           <label for="m_setor">Setor de atuação</label>
-          <select id="m_setor" name="setor">
+          <select id="m_setor" name="setor" required>
             <option value="">Selecione</option>
             <option>Saúde / Clínicas</option>
             <option>Serviços / B2B</option>
@@ -994,7 +994,7 @@
     if(!form) return;
     form.addEventListener('submit', async (ev) => {
       ev.preventDefault();
-      const required = ['nome','telefone','email','empresa'];
+      const required = ['nome','telefone','email','empresa','faturamento','setor'];
       let valid = true;
       required.forEach(n => {
         const f = form[n]; const v = (f.value||'').trim();
